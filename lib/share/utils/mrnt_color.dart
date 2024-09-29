@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 /// light theme
-class MrntColors {
+class AppColors {
   static const Color white = Color(0xffffffff);
   static const Color primary = Color(0xff0040AA);
   static const Color primaryContainer = Color(0xff0060F7);

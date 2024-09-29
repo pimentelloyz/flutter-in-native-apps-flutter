@@ -1,5 +1,5 @@
+import 'package:ai_que_fome_flutter/infra/channels/event_channels.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'navigation_data.dart';
@@ -32,8 +32,6 @@ mixin NavigationManager {
   }
 
   Future<void> openNativeRoute(String route) async {
-    const platform = MethodChannel('com.example.ai_que_fome_flutter/router');
-
-    await platform.invokeMethod('router', {'route': route});
+    await AiQFMChannel.platform?.invokeMethod('router', {'route': route});
   }
 }

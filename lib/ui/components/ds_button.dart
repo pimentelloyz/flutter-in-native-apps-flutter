@@ -21,7 +21,7 @@ class DSButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: style == DSButtonStyle.primary
-              ? MrntColors.primary
+              ? AppColors.primary
               : Theme.of(context).splashColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100.0),

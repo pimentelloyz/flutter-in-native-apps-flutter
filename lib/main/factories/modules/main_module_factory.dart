@@ -1,5 +1,6 @@
 import 'package:ai_que_fome_flutter/main/factories/pages/coupon/coupon_page_factory.dart';
 import 'package:ai_que_fome_flutter/main/factories/pages/coupon_details/coupon_details_page_factory.dart';
+import 'package:ai_que_fome_flutter/main/factories/pages/home/home_page_factory.dart';
 import 'package:ai_que_fome_flutter/main/factories/pages/order/order_page_factory.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -15,6 +16,11 @@ class MainModule extends Module {
     r.child(
       Routes.splash,
       child: (_) => makeSplashPage(),
+      transition: TransitionType.fadeIn,
+    );
+    r.child(
+      Routes.home,
+      child: (_) => makeHomePage(),
       transition: TransitionType.fadeIn,
     );
     r.child(
