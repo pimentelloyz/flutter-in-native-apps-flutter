@@ -1,4 +1,5 @@
 import 'package:ai_que_fome_flutter/infra/channels/event_channels.dart';
+import 'package:ai_que_fome_flutter/presentation/presenters/splash/stream_splash_presenter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -18,6 +19,7 @@ mixin NavigationManager {
             Modular.to.pop();
           }
           if (data.nativeNavigation) {
+            backToNativeGlobal = false;
             openNativeRoute(data.route);
           } else {
             if (data.clear == true) {

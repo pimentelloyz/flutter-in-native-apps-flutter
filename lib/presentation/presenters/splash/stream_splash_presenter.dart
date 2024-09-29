@@ -9,7 +9,7 @@ class StreamSplashPresenter
     with NavigationManager, UIErrorManager
     implements SplashPresenter {
   @override
-  Future<void> convinienceInit({int durationInSeconds = 5}) async {
+  Future<void> convinienceInit({int durationInSeconds = 1}) async {
     await Future.delayed(Duration(seconds: durationInSeconds));
     navigateTo = NavigationData(route: Routes.home, clear: true);
   }

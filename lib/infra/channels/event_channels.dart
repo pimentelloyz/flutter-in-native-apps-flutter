@@ -23,8 +23,7 @@ class AiQFMChannel {
             AiqfRouter.values.firstWhere((e) => e.value == route);
         switch (aiqfRouter) {
           case AiqfRouter.back:
-            final backToNative = args['backToNative'];
-            backToNativeGlobal = bool.tryParse(backToNative) ?? false;
+            backToNativeGlobal = true;
           case AiqfRouter.sessionExpired:
             final context = navigatorKey.currentContext!;
             showExpiredSessionMessage(context, 'Token expirado');
