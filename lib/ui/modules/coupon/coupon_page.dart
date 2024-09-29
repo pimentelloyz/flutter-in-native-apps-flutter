@@ -17,16 +17,16 @@ class CouponPage extends StatefulWidget {
   });
 
   @override
-  // ignore: library_private_types_in_public_api
-  _CouponPageState createState() => _CouponPageState();
+  CouponPageState createState() => CouponPageState();
 }
 
-class _CouponPageState extends State<CouponPage>
+class CouponPageState extends State<CouponPage>
     with NavigationManager, FormManager, UIErrorManager, LoadingManager {
   @override
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
+        handleNavigation(widget.presenter.navigateToStream);
         widget.presenter.loadData();
         return StreamBuilder<CouponsViewmodel?>(
             stream: widget.presenter.viewModel,
@@ -90,7 +90,9 @@ class _CouponPageState extends State<CouponPage>
                             if (viewModel != null) {
                               return CouponCard(
                                 viewmodel: viewModel,
-                                onDetailsTap: () {},
+                                onDetailsTap: () {
+                                  widget.presenter.goToDetails();
+                                },
                               );
                             }
                             return const SizedBox.shrink();

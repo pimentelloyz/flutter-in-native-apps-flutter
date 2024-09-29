@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:ai_que_fome_flutter/domain/usecases/coupon/load_coupon.dart';
+import 'package:ai_que_fome_flutter/main/routes/routes_app.dart';
+import 'package:ai_que_fome_flutter/ui/mixins/navigation_data.dart';
 import 'package:ai_que_fome_flutter/ui/modules/coupon/coupon_viewmodel.dart';
 
 import '../../../domain/helpers/domain_error.dart';
@@ -18,6 +20,11 @@ class StreamCouponPresenter
 
   @override
   Stream<CouponsViewmodel?> get viewModel => _viewModel.stream;
+
+  @override
+  void goToDetails() {
+    navigateTo = NavigationData(route: Routes.couponDetails, clear: false);
+  }
 
   @override
   Future<void> loadData() async {

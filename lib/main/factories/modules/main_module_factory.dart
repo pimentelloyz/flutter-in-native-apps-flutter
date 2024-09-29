@@ -1,4 +1,6 @@
 import 'package:ai_que_fome_flutter/main/factories/pages/coupon/coupon_page_factory.dart';
+import 'package:ai_que_fome_flutter/main/factories/pages/coupon_details/coupon_details_page_factory.dart';
+import 'package:ai_que_fome_flutter/main/factories/pages/order/order_page_factory.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../routes/routes_app.dart';
@@ -18,6 +20,16 @@ class MainModule extends Module {
     r.child(
       Routes.coupon,
       child: (_) => makeCouponPage(),
+      transition: TransitionType.fadeIn,
+    );
+    r.child(
+      Routes.couponDetails,
+      child: (_) => makeCouponDetailsPage(),
+      transition: TransitionType.defaultTransition,
+    );
+    r.child(
+      Routes.order,
+      child: (_) => makeOrderPage(),
       transition: TransitionType.fadeIn,
     );
   }
