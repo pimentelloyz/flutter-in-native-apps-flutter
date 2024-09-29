@@ -1,12 +1,10 @@
 import 'package:flutter/foundation.dart';
 
-import '../../ui/helpers/helpers.dart';
-
 mixin UIErrorManager {
-  final ValueNotifier<UIError?> mainErrorStream = ValueNotifier<UIError?>(null);
-  set mainError(UIError? value) {
+  final ValueNotifier<String?> mainErrorStream = ValueNotifier<String?>(null);
+  set mainError(String? value) {
     mainErrorStream.value = value;
   }
 
-  ValueNotifier<UIError?> get mainErrorValue => mainErrorStream;
+  ValueNotifier<String?> get mainErrorValue => mainErrorStream;
 }

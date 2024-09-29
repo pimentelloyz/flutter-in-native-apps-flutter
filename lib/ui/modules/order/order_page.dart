@@ -34,7 +34,7 @@ class OrderPageState extends State<OrderPage>
                 color: Color.fromARGB(255, 153, 39, 198),
               ),
               onPressed: () {
-                Navigator.pop(context);
+                widget.presenter.routerTo();
               },
             ),
             title: Container(

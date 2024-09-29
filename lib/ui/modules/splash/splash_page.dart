@@ -1,4 +1,5 @@
 import 'package:ai_que_fome_flutter/ui/mixins/navigation_manager.dart';
+import 'package:ai_que_fome_flutter/ui/mixins/ui_error_manager.dart';
 import 'package:ai_que_fome_flutter/ui/modules/splash/splash_presenter.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,12 @@ class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> with NavigationManager {
+class _SplashPageState extends State<SplashPage>
+    with NavigationManager, UIErrorManager {
   @override
   Widget build(BuildContext context) {
-    widget.presenter.checkAccount();
+    handleMainError(context, widget.presenter.mainErrorStream);
+    widget.presenter.convinienceInit();
 
     return Material(
       child: Builder(

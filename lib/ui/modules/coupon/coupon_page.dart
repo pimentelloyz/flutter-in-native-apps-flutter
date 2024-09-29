@@ -41,7 +41,7 @@ class CouponPageState extends State<CouponPage>
                       color: Color.fromARGB(255, 153, 39, 198),
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      widget.presenter.backToNative();
                     },
                   ),
                   title: Container(

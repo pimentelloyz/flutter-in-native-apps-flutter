@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:ai_que_fome_flutter/main/routes/routes_app.dart';
+import 'package:ai_que_fome_flutter/presentation/presenters/splash/stream_splash_presenter.dart';
+import 'package:ai_que_fome_flutter/ui/mixins/navigation_data.dart';
 import 'package:ai_que_fome_flutter/ui/modules/order/order_presenter.dart';
 
 import '../../../domain/helpers/domain_error.dart';
@@ -17,14 +20,24 @@ class StreamOrderPresenter
     } on DomainError catch (error) {
       switch (error) {
         case DomainError.invalidCredentials:
-          mainError = UIError.invalidCredentials;
+          mainError = UIError.invalidCredentials.name;
           break;
         default:
-          mainError = UIError.unexpected;
+          mainError = UIError.unexpected.name;
           break;
       }
     } finally {
       isLoading = LoadingData(isLoading: false);
     }
+  }
+
+  @override
+  void routerTo() {
+    navigateTo = NavigationData(
+      route: Routes.backToNative,
+      clear: false,
+      navigationBack: !backToNativeGlobal,
+      nativeNavigation: backToNativeGlobal,
+    );
   }
 }

@@ -20,7 +20,7 @@ class MainModule extends Module {
     r.child(
       Routes.coupon,
       child: (_) => makeCouponPage(),
-      transition: TransitionType.fadeIn,
+      transition: TransitionType.defaultTransition,
     );
     r.child(
       Routes.couponDetails,
