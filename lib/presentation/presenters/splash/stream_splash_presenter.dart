@@ -5,7 +5,7 @@ import '../../mixins/mixins.dart';
 
 class StreamSplashPresenter with NavigationManager implements SplashPresenter {
   @override
-  Future<void> checkAccount({int durationInSeconds = 2}) async {
+  Future<void> checkAccount({int durationInSeconds = 5}) async {
     await Future.delayed(Duration(seconds: durationInSeconds));
     navigateTo = NavigationData(route: Routes.coupon, clear: true);
   }

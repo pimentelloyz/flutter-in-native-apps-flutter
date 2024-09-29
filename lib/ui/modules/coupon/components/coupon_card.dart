@@ -1,22 +1,15 @@
+import 'package:ai_que_fome_flutter/ui/modules/coupon/coupon_viewmodel.dart';
 import 'package:flutter/material.dart';
 
 class CouponCard extends StatelessWidget {
-  final String title;
-  final String discount;
-  final String validity;
-  final bool isExpired;
-  final bool isOutOfStock;
+  final CouponViewmodel viewmodel;
   final VoidCallback onDetailsTap;
 
   const CouponCard({
-    Key? key,
-    required this.title,
-    required this.discount,
-    required this.validity,
-    this.isExpired = false,
-    this.isOutOfStock = false,
+    super.key,
+    required this.viewmodel,
     required this.onDetailsTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +25,21 @@ class CouponCard extends StatelessWidget {
               children: [
                 Icon(
                   Icons.local_activity,
-                  color: isExpired || isOutOfStock ? Colors.grey : Colors.teal,
+                  color: viewmodel.isExpired || viewmodel.isOutOfStock
+                      ? Colors.grey
+                      : Colors.teal,
                   size: 32.0,
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  title,
+                  viewmodel.coupon ?? '',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color:
-                        isExpired || isOutOfStock ? Colors.grey : Colors.purple,
-                    decoration: isExpired || isOutOfStock
+                    color: viewmodel.isExpired || viewmodel.isOutOfStock
+                        ? Colors.grey
+                        : Colors.purple,
+                    decoration: viewmodel.isExpired || viewmodel.isOutOfStock
                         ? TextDecoration.lineThrough
                         : null,
                   ),
@@ -53,13 +49,16 @@ class CouponCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            discount,
+            viewmodel.description ?? '',
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              color: isExpired || isOutOfStock ? Colors.grey : Colors.teal,
-              decoration:
-                  isExpired || isOutOfStock ? TextDecoration.lineThrough : null,
+              color: viewmodel.isExpired || viewmodel.isOutOfStock
+                  ? Colors.grey
+                  : Colors.teal,
+              decoration: viewmodel.isExpired || viewmodel.isOutOfStock
+                  ? TextDecoration.lineThrough
+                  : null,
             ),
             textAlign: TextAlign.center,
           ),
@@ -73,11 +72,11 @@ class CouponCard extends StatelessWidget {
               children: [
                 // Texto à esquerda
                 Text(
-                  isExpired
-                      ? 'expirado em $validity'
-                      : isOutOfStock
+                  viewmodel.isExpired
+                      ? 'expirado em ${viewmodel.validity}'
+                      : viewmodel.isOutOfStock
                           ? 'esgotado'
-                          : 'válido até $validity',
+                          : 'válido até ${viewmodel.validity}',
                   style: const TextStyle(
                     fontSize: 12,
                     color: Colors.grey,
