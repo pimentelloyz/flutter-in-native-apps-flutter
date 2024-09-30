@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:ai_que_fome_flutter/domain/usecases/coupon/load_coupon.dart';
 import 'package:ai_que_fome_flutter/main/routes/routes_app.dart';
-import 'package:ai_que_fome_flutter/presentation/presenters/splash/stream_splash_presenter.dart';
 import 'package:ai_que_fome_flutter/ui/mixins/navigation_data.dart';
 import 'package:ai_que_fome_flutter/ui/modules/coupon/coupon_viewmodel.dart';
 
@@ -27,7 +26,6 @@ class StreamCouponPresenter
     navigateTo = NavigationData(
       route: Routes.backToNative,
       clear: false,
-      nativeNavigation: backToNativeGlobal,
     );
   }
 

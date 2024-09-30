@@ -40,7 +40,7 @@ class OrderPageState extends State<OrderPage>
             title: Container(
               alignment: Alignment.centerLeft,
               child: const Text(
-                'cupons',
+                'Meus pedidos',
                 style: TextStyle(
                   color: Color.fromARGB(255, 153, 39, 198),
                   fontWeight: FontWeight.w600,
@@ -57,14 +57,14 @@ class OrderPageState extends State<OrderPage>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.content_copy,
+                      Icons.hourglass_empty,
                       color: Color.fromARGB(255, 153, 39, 198),
                       size: 18,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 4.0),
                       child: Text(
-                        'Toque no nome do cupom para copiar',
+                        'Nenhum pedido encontrado',
                         style: TextStyle(
                           fontSize: 14.0,
                           color: Colors.black,

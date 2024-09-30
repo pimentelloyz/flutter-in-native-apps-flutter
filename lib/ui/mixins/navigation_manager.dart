@@ -18,8 +18,7 @@ mixin NavigationManager {
           if (data.navigationBack) {
             Modular.to.pop();
           }
-          if (data.nativeNavigation) {
-            backToNativeGlobal = false;
+          if (backToNativeGlobal) {
             openNativeRoute(data.route);
           } else {
             if (data.clear == true) {
@@ -34,6 +33,7 @@ mixin NavigationManager {
   }
 
   Future<void> openNativeRoute(String route) async {
+    backToNativeGlobal = false;
     await AiQFMChannel.platform?.invokeMethod('router', {'route': route});
   }
 }

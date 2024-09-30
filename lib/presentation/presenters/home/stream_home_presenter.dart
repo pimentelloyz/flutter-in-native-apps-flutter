@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:ai_que_fome_flutter/main/routes/routes_app.dart';
-import 'package:ai_que_fome_flutter/presentation/presenters/splash/stream_splash_presenter.dart';
 import 'package:ai_que_fome_flutter/ui/mixins/navigation_data.dart';
 import 'package:ai_que_fome_flutter/ui/modules/home/home_presenter.dart';
 
@@ -36,8 +35,6 @@ class StreamHomePresenter
     navigateTo = NavigationData(
       route: Routes.backToNative,
       clear: false,
-      navigationBack: !backToNativeGlobal,
-      nativeNavigation: backToNativeGlobal,
     );
   }
 }

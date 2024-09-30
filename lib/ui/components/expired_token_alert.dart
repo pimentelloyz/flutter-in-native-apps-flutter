@@ -6,7 +6,7 @@ import '../helpers/helpers.dart';
 
 void showExpiredSessionMessage(BuildContext context, String error) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-    duration: const Duration(minutes: 1),
+    duration: const Duration(seconds: 5),
     backgroundColor: AppColors.error,
     content: Padding(
       padding: const EdgeInsets.only(bottom: 24),
@@ -42,7 +42,6 @@ void showExpiredSessionMessage(BuildContext context, String error) {
                       'route': AiqfRouter.sessionExpired.value,
                     },
                   );
-                  Navigator.of(context).pop();
                 },
                 child: const Text(
                   'Atualizar token',
