@@ -3,6 +3,7 @@ import 'package:ai_que_fome_flutter/ui/mixins/loading_manager.dart';
 import 'package:ai_que_fome_flutter/ui/mixins/navigation_manager.dart';
 import 'package:ai_que_fome_flutter/ui/mixins/ui_error_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CouponDetailsPage extends StatefulWidget {
   const CouponDetailsPage({
@@ -29,7 +30,7 @@ class CouponDetailsPageState extends State<CouponDetailsPage>
                 color: Color.fromARGB(255, 153, 39, 198),
               ),
               onPressed: () {
-                Navigator.pop(context);
+                Modular.to.pop();
               },
             ),
             title: Container(

@@ -1,5 +1,4 @@
 import 'package:ai_que_fome_flutter/main/app.dart';
-import 'package:ai_que_fome_flutter/presentation/presenters/splash/stream_splash_presenter.dart';
 import 'package:ai_que_fome_flutter/ui/components/expired_token_alert.dart';
 import 'package:ai_que_fome_flutter/ui/components/sucess_message.dart';
 import 'package:flutter/services.dart';
@@ -23,7 +22,7 @@ class AiQFMChannel {
             AiqfRouter.values.firstWhere((e) => e.value == route);
         switch (aiqfRouter) {
           case AiqfRouter.back:
-            backToNativeGlobal = true;
+            break;
           case AiqfRouter.sessionExpired:
             final context = navigatorKey.currentContext!;
             showExpiredSessionMessage(context, 'Token expirado');

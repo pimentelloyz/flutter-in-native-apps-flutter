@@ -1,3 +1,4 @@
+import 'package:ai_que_fome_flutter/infra/channels/event_channels.dart';
 import 'package:ai_que_fome_flutter/presentation/mixins/form_manager.dart';
 import 'package:ai_que_fome_flutter/ui/mixins/loading_manager.dart';
 import 'package:ai_que_fome_flutter/ui/mixins/navigation_manager.dart';
@@ -33,8 +34,9 @@ class OrderPageState extends State<OrderPage>
                 Icons.arrow_back,
                 color: Color.fromARGB(255, 153, 39, 198),
               ),
-              onPressed: () {
-                widget.presenter.routerTo();
+              onPressed: () async {
+                await AiQFMChannel.platform
+                    ?.invokeMethod('router', {'route': AiqfRouter.back.value});
               },
             ),
             title: Container(

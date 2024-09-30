@@ -3,8 +3,6 @@ import '../../../ui/mixins/navigation_data.dart';
 import '../../../ui/modules/splash/splash_presenter.dart';
 import '../../mixins/mixins.dart';
 
-bool backToNativeGlobal = false;
-
 class StreamSplashPresenter
     with NavigationManager, UIErrorManager
     implements SplashPresenter {

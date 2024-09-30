@@ -31,7 +31,10 @@ class StreamCouponPresenter
 
   @override
   void goToDetails() {
-    navigateTo = NavigationData(route: Routes.couponDetails, clear: false);
+    navigateTo = NavigationData(
+      route: Routes.couponDetails,
+      clear: false,
+    );
   }
 
   @override
